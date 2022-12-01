@@ -1,0 +1,92 @@
+.main-login{
+    .cabecalho{
+
+    }
+    .f1-login{
+        background-image: url('../../assets/img/Cinema.jpg');
+        background-position-y: -10.7em;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        height: 45.4em;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .f1-card{
+            display: flex;
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            background-color: #000000ea;
+            border-radius: 0.5em;
+            width: 20em;
+            font-family: 'inter';
+            padding-bottom: 5em;
+            padding-top: 4em;
+
+            .f1-card-input{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .f1-card-input > div > input{
+                background-color: #00000000;
+                border: none;
+                border-bottom: 1px solid #fff;
+                color: #fff;
+                width: 20em;
+                outline: 0;
+            }
+
+            .f1-card-button{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin-top: 2em;
+            }
+            .f1-card-button > button{
+                color: #fff;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+                font-family: 'inter';
+                cursor: pointer;
+                border-radius: 1em;
+                border: 1px solid #fff;
+                padding: 0.5em 1em;
+                -webkit-transition: all 0.2s ease;
+                margin-bottom: 1em;
+            }
+
+            .f1-card-button > button:hover{
+                transition: 500ms;
+                background-color: white;
+                color: #000000;
+            }
+
+            .f1-cadastro{
+                
+            }
+
+            .f1-cadastro > p{
+                font-family: 'inter';
+                color: rgb(104, 104, 104);
+                font-size: 0.7em;
+            }
+
+            .f1-cadatro > a{
+                font-family: 'inter';
+                border: none;
+                color: #fff;
+            }
+            .f1-cadatro > a:visited, a:link, a:-webkit-any-link{
+                font-family: 'inter';
+                border: none;
+                color: #ffffff;
+                text-decoration: none;
+            }
+        }
+
+
+    }
+}

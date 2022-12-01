@@ -1,0 +1,45 @@
+.main{
+    background: linear-gradient(90deg, #600000 0%, #000000 100.87%);
+    .cab{
+        color: #fff;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        height: 8em;
+        margin-left: 3em;
+        margin-right: 3em;
+
+        font-family: 'lexend';
+        font-size: 0.5em;
+        .cab-div-img{
+            .cab-img-logo{
+                height: 5em;
+                width: 9em;
+                cursor: pointer;
+            }
+        }
+        
+        .cab-div-txt{
+            .cab-div-txt-cineplix{
+                font-size: 2em;
+                font-weight: 100;
+            }
+        }
+        .cab-div-log{
+            display: flex;
+            flex-direction: row;
+            .cab-div-txt-log{
+                cursor: pointer;
+                font-size: 1.8em;
+                margin-right: 1em;
+            }
+        }
+        .cab-div-log > img{
+            margin-top: 0.5em;
+            height: 4em;
+            width: 4em;
+            cursor: pointer;
+        }
+    }
+}

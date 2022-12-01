@@ -28,24 +28,24 @@ import CadastrarUsuario, {login} from "../repository/userRepository.js";
  })
 
  server.post('/usuario/login', async (req,resp) => {
-    try {
-        const {email , senha } = req.body
+  try {
+      const {email , senha } = req.body
 
-        const resposta = await login(email, senha);
+      const resposta = await login(email, senha);
 
-        if(!resposta) {
-            throw new Error ('Credenciais Inválidas')
-        }
-        resp.send({
-            id: resposta.id,
-            nome: resposta.nome
-        })
+      if(!resposta) {
+          throw new Error ('Credenciais Inválidas')
+      }
+      resp.send({
+          id: resposta.id,
+          nome: resposta.nome
+      })
 
-    } catch (err) {
-        resp.status(401).send({
-            erro: err.message
-                
-        })}
+  } catch (err) {
+      resp.status(401).send({
+          erro: err.message
+              
+      })}
 })
 
 export default server;
