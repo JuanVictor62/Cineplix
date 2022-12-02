@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 import { CadastroUsuario } from '../../api/usuarioAPI.js';
 
+import CinemaIcon from '../../assets/img/cinemaicon.png'
+
 export default function Index(){
     const [nome, setNome] = useState('');
     const [dtNascimento, setDtNascimento] = useState('');
@@ -15,13 +17,21 @@ export default function Index(){
     const [email, setEmail] = useState('');
     const [senha, setSenha] = useState('');
     const [senha2, setSenha2] = useState('');
+    const [termos, setTermos] = useState(false);
 
     const navigate = useNavigate();
 
     async function cadastroUser() {
         try {
-            if (validator.isEmail(email)) {
-                if (senha != senha2) {
+                if(termos == false){
+                    toast.error('É obrigatorio aceitar os nossos Termos de Uso');
+                }
+
+                else if (!validator.isEmail(email)) {
+                    toast.error('Email invalido');
+                }
+
+                else if (senha != senha2) {
                     toast.error("Senhas não coincidem");
                 }
                 
@@ -33,12 +43,8 @@ export default function Index(){
 
             }
 
-            else {
-                toast.warn('Email inválido');
-            }
 
-
-        }
+        
         catch (err) {
             toast.error(err.response.data.erro);
             console.log(err)
@@ -52,44 +58,55 @@ export default function Index(){
             </div>
 
             <section className='f1-cadastro'>
-                <div>
+                <div className='f1-cadastro-tit'>
                     <h1>Cadastre-se</h1>
                 </div>
 
-                <div>
+                <div className='f1-cadastro-aviso'>
                     Preencha os Campos abaixo
                 </div>
 
-                <div>
-                    <div>
-                        <div>
-                            <p>Nome:</p>
-                            <input type='text' value={nome} onChange={e => setNome(e.target.value)} />
+                <div className='f1-cadastro-menu'>
+                    <div className='f1-cadastro-campos'>
+                        <div className='f1-cadastro-nome'>
+                            <p className='f1-cadastro-nome-'>Nome:</p>
+                            <input className='f1-cadastro-nome-input'  type='text' value={nome} onChange={e => setNome(e.target.value)} />
                         </div>
 
-                        <div>
-                            <p>Data de Nascimento:</p>
-                            <input type='date' value={dtNascimento} onChange={e => setDtNascimento(e.target.value)} />
+
+                        <div className='f1-cadastro-campos-2'>
+                            <div className='f1-cadastro-data'>
+                                <p>Data de Nascimento:</p>
+                                <input type='date' value={dtNascimento} onChange={e => setDtNascimento(e.target.value)} />
+                            </div>
+
+                            <div className='f1-cadastro-telefone' >
+                                <p>Telefone:</p>
+                                <IMaskInput mask="(00)00000-0000" value={telefone} onChange={e => setTelefone(e.target.value)} />
+                            </div>
                         </div>
 
-                        <div>
-                            <p>Telefone:</p>
-                            <IMaskInput mask="(00)00000-0000" value={telefone} onChange={e => setTelefone(e.target.value)} />
-                        </div>
-
-                        <div>
+                        <div className='f1-cadastro-email' >
                             <p>Email:</p>
                             <input type='text' value={email} onChange={e => setEmail(e.target.value)} />
                         </div>
 
-                        <div>
-                            <p>Senha:</p>
-                            <input type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
+                        <div className='f1-cadastro-campos-3'>
+                            <div className='f1-cadastro-senha'>
+                                <p>Senha:</p>
+                                <input type='password' value={senha} onChange={e => setSenha(e.target.value)}/>
+                            </div>
+
+                            <div className='f1-cadastro-senha2'>
+                                <p>Confirmação de Senha:</p>
+                                <input type='password' value={senha2} onChange={e => setSenha2(e.target.value)} />
+                            </div>
                         </div>
 
-                        <div>
-                            <p>Confirmação de Senha:</p>
-                            <input type='password' value={senha2} onChange={e => setSenha2(e.target.value)} />
+
+                        <div className='f1-cadastro-termos' >
+                            <input className='f1-cadastro-check' type="checkbox" value={termos} onChange={e => setTermos(e.target.checked)} />
+                            <p className='f1-cadastro-termos-txt' >LI E ACEITO OS <span className='f1-cadastro-termos-txt-a' >TERMOS DE USO</span></p>
                         </div>
 
                         <div>
@@ -97,8 +114,8 @@ export default function Index(){
                         </div>
                     </div>
 
-                    <div>
-                        <img alt='' />
+                    <div className='f1-cadastro-icon' >
+                        <img src={CinemaIcon} alt='' />
                     </div>
                 </div>
             </section>

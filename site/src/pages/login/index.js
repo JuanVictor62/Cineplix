@@ -65,14 +65,14 @@ export default function Index() {
                                 <p>
                                     Usuario:
                                 </p>
-                                <input className='input' type='text' placeholder='Usuario' value={email} onChange={e => setEmail(e.target.value)} />
+                                <input className='input' type='text' value={email} onChange={e => setEmail(e.target.value)} />
                             </div>
 
                             <div>
                                 <p>
                                     Senha:
                                 </p>
-                                <input type='password' placeholder='Senha' value={senha} onChange={e => setSenha(e.target.value)} />
+                                <input type='password' value={senha} onChange={e => setSenha(e.target.value)} />
                             </div>
 
                             <div className='f1-card-button'>

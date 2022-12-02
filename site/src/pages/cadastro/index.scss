@@ -1,0 +1,163 @@
+.Cadastro{
+    .f1-cadastro{
+        background-color: black;
+        color: #b9b9b9;
+        height: 45.4em;
+
+        .f1-cadastro-tit{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5em;
+            font-family: 'raleway';
+            font-weight: 100;
+        }
+
+        .f1-cadastro-aviso{
+            font-family: 'raleway';
+            font-size: 0.8em;
+            margin-left: 3.8em;
+            color: #b5121b;
+            font-weight: 800;
+        }
+
+        .f1-cadastro-menu{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 3em;
+            margin-right: 3.8em;
+            margin-top: 3em;
+
+            font-family: 'raleway';
+            font-weight: 800;
+
+            .f1-cadastro-campos{
+
+                .f1-cadastro-nome{
+                    .f1-cadastro-nome-txt{
+
+                    }
+
+                    .f1-cadastro-nome-input{
+                        width: 45em;
+                    }
+                }
+
+                .f1-cadastro-campos-2{
+                    display: flex;
+                    flex-direction: row;
+                    .f1-cadastro-data{
+                        
+                    }
+                    .f1-cadastro-data > input{
+                        background-color: black;
+                        color: #fff;
+                        border: none;
+                        border-bottom: 1px solid #fff ;
+                        outline: none;
+                        width: 21em;
+                        margin-right: 3em;
+                    }
+
+                    .f1-cadastro-telefone{
+
+                    }
+
+                    .f1-cadastro-telefone > input{
+                        background-color: black;
+                        color: #fff;
+                        border: none;
+                        border-bottom: 1px solid #fff ;
+                        outline: none;
+                        width: 21em;
+                    }
+                }
+
+                .f1-cadastro-email > input{
+                    background-color: black;
+                    color: #fff;
+                    border: none;
+                    border-bottom: 1px solid #fff ;
+                    outline: none;
+                    width: 45em;
+                }
+
+                .f1-cadastro-campos-3{
+                    display: flex;
+                    flex-direction: row;
+                    margin-bottom: 5em;
+                    .f1-cadastro-senha > input{                        background-color: black;
+                        color: #fff;
+                        border: none;
+                        border-bottom: 1px solid #fff ;
+                        outline: none;
+                        width: 21em;
+                        margin-right: 3em;
+
+                    }
+                    .f1-cadastro-senha2 > input{
+                        background-color: black;
+                        color: #fff;
+                        border: none;
+                        border-bottom: 1px solid #fff ;
+                        outline: none;
+                        width: 21em;
+                    }
+                }
+                
+
+                .f1-cadastro-termos{
+                    display: flex;
+                    flex-direction: row;
+                    .f1-cadastro-check{
+
+                    }
+
+                    .f1-cadastro-termos-txt{
+                        
+                        font-size: 0.8em;
+                        .f1-cadastro-termos-txt-a{
+                            color: #b5121b !important;
+                            cursor: pointer;
+                            font-weight: 800;
+
+                        }
+                    }
+                }
+            }
+            .f1-cadastro-campos > div > input{
+                background-color: black;
+                color: #fff;
+                border: none;
+                border-bottom: 1px solid #fff ;
+                outline: none;
+            }
+
+            .f1-cadastro-campos > div > p{
+                font-weight: 100;
+            }
+
+            .f1-cadastro-icon > img{
+                width: 20em;
+                filter: drop-shadow(4px 4px 2px #121212);
+
+                transform: translatey(0px);
+                animation: float 2.5s ease-in-out infinite;
+            }
+
+            @keyframes float {
+                0%{
+                    transform: translatey(0px);
+                }
+
+                50% {
+                    transform: translatey(-30px);
+                }
+                100%{
+                    transform: translatey(0px);
+                }
+            }
+        }
+    }   
+}
