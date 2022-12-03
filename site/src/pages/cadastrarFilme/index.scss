@@ -1,0 +1,166 @@
+.main-cadastro{
+    .f1-cabecalho{
+
+    }
+
+    .f1-cadastro{
+        background-color: #000000;
+        color: #ffffff;
+        margin-top: -1.3em;
+        height: 45.4em;
+        .f1-cadastro-div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-left: 5em;
+            margin-right: 5em;
+
+            .f1-cadastro-campos{
+
+                .f1-cadastro-nome{
+
+                }
+
+                .f1-cadastro-nome > input{
+                    background-color: #181818;
+                    border-radius: 0.2em;
+                    border: none;
+                    color: #ffffff;
+                    outline: none;
+                    font-family: 'raleway';
+                }
+
+                .f1-cadastro-sinopse{
+
+                }
+
+                .f1-cadastro-sinopse > textarea{
+                    background-color: #181818;
+                    border-radius: 0.2em;
+                    border: none;
+                    color: #ffffff;
+                    outline: none;
+                    font-family: 'raleway';
+                    resize: none;   
+                }
+
+                .f1-cadastro-duracao{
+
+                }
+
+                .f1-cadastro-duracao > input{
+                    background-color: #181818;
+                    border-radius: 0.2em;
+                    border: none;
+                    color: #ffffff;
+                    outline: none;
+                    font-family: 'raleway'; 
+                }
+
+                .f1-cadastro-duracao > input::-webkit-inner-spin-button{
+                    -webkit-appearance: none;
+
+                }
+
+                .f1-cadastro-genero{
+
+                }
+
+                .f1-cadastro-genero > select{
+                    background-color: #181818;
+                    font-family: 'raleway';
+                    color: #ffffff;
+                }
+
+                .f1-cadastro-classificacao > select{
+                    background-color: #181818;
+                    font-family: 'raleway';
+                    color: #ffffff;
+                }
+
+                .f1-cadastro-idioma > select {
+                    background-color: #181818;
+                    font-family: 'raleway';
+                    color: #ffffff;
+                }
+
+            }
+        }
+
+        .f1-imagens{
+            margin-top: -1em;
+            
+            .f1-capa{
+                
+            }
+
+            .insert-img-agrupamento-div1-1{
+                display: flex;
+                flex-direction: row;
+    
+                height: 15em;
+                width: 30em;
+    
+                border-radius: .5em;
+    
+                background-color: #f4f4f4;
+
+
+                #imagem{
+                    visibility: hidden;
+                }
+
+                .foto{
+                    height: 15em;
+                    width: 30em;
+                    border-radius: .5em;
+                }
+
+            }
+
+            .img-2{
+                display: flex;
+                flex-direction: row;
+    
+                height: 15em;
+                width: 12.5em;
+    
+                border-radius: .5em;
+    
+                background-color: #f4f4f4;
+
+                #imagem2{
+                    visibility: hidden;
+                }
+
+                .foto2{
+                    height: 15em;
+                    width: 30em;
+                    border-radius: .5em;
+                }
+            }
+
+            
+        }
+
+        .f1-imagens > div > .botao{
+                margin-top: 1em;
+                color: #fff;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+                font-family: 'inter';
+                cursor: pointer;
+                border-radius: 1em;
+                border: 1px solid #fff;
+                padding: 0.5em 1em;
+                -webkit-transition: all 0.2s ease;          
+        }
+            
+        .f1-imagens > div > .botao:hover{
+                transition: 500ms;
+                background-color: white;
+                color: #000000;
+            }
+        
+    }
+}

@@ -1,4 +1,4 @@
-import { removerFilmeImagem, removerFilmeImagensDiferentes, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
+import {listarClassificacao, listarGenero, listarIdioma, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
 
 import { Router } from "express";
 import multer from 'multer'
@@ -7,7 +7,51 @@ const server = Router();
 
 const upload = multer({ dest: 'storage/fotoFilme' })
 
-server.post('/admin/filme', async (req,resp) => {
+//GET
+
+server.get('/get/genero', async (req, resp) => {
+    try {
+        const linhas = await listarGenero();
+        resp.send(linhas);
+    }
+    catch (err) {
+        console.log(err)
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/get/classificacao', async (req, resp) => {
+    try {
+        const linhas = await listarClassificacao();
+        resp.send(linhas);
+    }
+    catch (err) {
+        console.log(err)
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/get/idioma', async (req, resp) => {
+    try {
+        const linhas = await listarIdioma();
+        resp.send(linhas);
+    }
+    catch (err) {
+        console.log(err)
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+
+//POST
+
+server.post('/insert/filme', async (req,resp) => {
     try {
         const filme = req.body;
 
@@ -26,7 +70,9 @@ server.post('/admin/filme', async (req,resp) => {
     }
 })
 
-server.put('/admin/filme/:id/imagem', upload.array('imagens'), async (req, resp) => {
+//PUT
+
+server.put('/insert/filme/:id/imagem', upload.array('imagens'), async (req, resp) => {
     try {
         const id = req.params.id;
         const imagens = req.files;

@@ -26,21 +26,35 @@ export async function salvarFilmeImagem(idProduto, imagemPath) {
     const [resp] = await con.query(comando, [idProduto, imagemPath]);
 }
 
-export async function removerFilmeImagensDiferentes(imagens, id) {
+export async function listarGenero(){
     const comando = `
-        delete from tb_filme_imagem
-              where ds_imagem NOT IN (?) and id_filme = ?
+        select 
+            id_genero as id,
+            nm_genero as genero
+            from tb_genero
     `
-
-    const [resp] = await con.query(comando, [imagens, id])
-    return resp.affectedRows;
+    const [resp] = await con.query(comando);
+    return resp;
 }
 
-export async function removerFilmeImagem(idProduto){
+export async function listarClassificacao(){
     const comando = `
-             delete from tb_filme_imagem
-                    where id_filme = ?
+        select 
+            id_classificacao as id,
+            nm_classificacao as classificacao
+            from tb_classificacao
     `
-    const [resp] = await con.query(comando, [idProduto])
-    return resp.affectedRows;
+    const [resp] = await con.query(comando);
+    return resp;
+}
+
+export async function listarIdioma(){
+    const comando = `
+        select 
+            id_idioma as id,
+            nm_idioma as idioma
+            from tb_idioma
+    `
+    const [resp] = await con.query(comando);
+    return resp;
 }
