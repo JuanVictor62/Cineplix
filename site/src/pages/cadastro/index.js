@@ -109,8 +109,8 @@ export default function Index(){
                             <p className='f1-cadastro-termos-txt' >LI E ACEITO OS <span className='f1-cadastro-termos-txt-a' >TERMOS DE USO</span></p>
                         </div>
 
-                        <div>
-                            <button onClick={cadastroUser}>Cadastrar</button>
+                        <div className='f1-cadastro-button'>
+                            <button onClick={cadastroUser} className='f1-cadastro-button-1' >Cadastrar</button>
                         </div>
                     </div>
 
