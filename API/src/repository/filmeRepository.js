@@ -58,3 +58,65 @@ export async function listarIdioma(){
     const [resp] = await con.query(comando);
     return resp;
 }
+
+export async function ListarTodosFilmePorId(id) {
+ 
+    const comando = `select 
+                        tb_filme.id_filme as id,
+                        nm_filme as nome,
+                        ds_sinopse as sinopse,
+                        ds_duracao as duracao,
+                        nm_genero as genero,
+                        nm_classificacao as classificacao,
+                        nm_idioma as idioma
+                    from tb_filme
+                        inner join tb_genero
+                            on tb_genero.id_genero = tb_filme.id_genero
+                        inner join tb_classificacao
+                            on tb_classificacao.id_classificacao = tb_filme.id_classificacao
+                        inner join tb_idioma
+                            on tb_idioma.id_idioma = tb_filme.id_idioma
+                        where id_filme = ?;
+                    `
+  
+    const [linhas] = await con.query(comando, [id]);
+    return linhas[0];
+  }
+
+  export async function ListarTodasImagensporId(idProduto) {
+ 
+    const comando = `    select ds_imagem as id
+                            from tb_filme_imagem
+                        where id_filme = ?;
+                    `
+
+    const [linhas] = await con.query(comando, [idProduto]);
+    return linhas.map(item => item.id);
+}
+
+export async function listarTodos(){
+    const comando = `
+            select 
+            tb_filme.id_filme as id,
+            nm_filme as nome,
+            ds_sinopse as sinopse,
+            ds_duracao as duracao,
+            nm_genero as genero,
+            nm_classificacao as classificacao,
+            nm_idioma as idioma,
+            ds_imagem as imagem
+        from tb_filme
+            inner join tb_genero
+                on tb_genero.id_genero = tb_filme.id_genero
+            inner join tb_classificacao
+                on tb_classificacao.id_classificacao = tb_filme.id_classificacao
+            inner join tb_idioma
+                on tb_idioma.id_idioma = tb_filme.id_idioma
+            inner join tb_filme_imagem
+                on tb_filme_imagem.id_filme = tb_filme.id_filme
+            group by tb_filme.id_filme;
+    `
+
+    const [linhas] = await con.query(comando);
+    return linhas;
+}

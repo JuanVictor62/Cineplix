@@ -2,10 +2,11 @@ import './index.scss'
 import '../../assets/common/index.scss'
 import Cabecalho from '../../components/cabecalho'
 import Carrosel from '../../components/carrosel'
+import CardFilmes from '../../components/cardFilme'
 
 export default function Index(){
     return(
-        <main>
+        <main className='f1-landing'>
             <header>
                 <Cabecalho/>
             </header>
@@ -14,9 +15,9 @@ export default function Index(){
                 <Carrosel/>
             </section>
 
-            <section>
+            <section className='f1-card'>
                 <div>
-                    <h1>Opa</h1>
+                    <CardFilmes/>
                 </div>
             </section>
             

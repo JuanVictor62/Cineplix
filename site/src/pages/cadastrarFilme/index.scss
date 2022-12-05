@@ -88,6 +88,8 @@
         }
 
         .f1-imagens{
+            display: flex;
+            flex-direction: column-reverse;
             margin-top: -1em;
             
             .f1-capa{
@@ -135,32 +137,33 @@
 
                 .foto2{
                     height: 15em;
-                    width: 30em;
+                    width: 12.5em;
                     border-radius: .5em;
                 }
             }
 
             
         }
-
-        .f1-imagens > div > .botao{
-                margin-top: 1em;
-                color: #fff;
-                border: none;
-                background-color: rgba(255, 255, 255, 0);
-                font-family: 'inter';
-                cursor: pointer;
-                border-radius: 1em;
-                border: 1px solid #fff;
-                padding: 0.5em 1em;
-                -webkit-transition: all 0.2s ease;          
-        }
-            
-        .f1-imagens > div > .botao:hover{
-                transition: 500ms;
-                background-color: white;
-                color: #000000;
-            }
         
     }
+}
+
+.botao{
+    margin-top: 1em;
+    margin-left: 5.5%;
+    color: #fff;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: 'inter';
+    cursor: pointer;
+    border-radius: 1em;
+    border: 1px solid #fff;
+    padding: 0.5em 1em;
+    -webkit-transition: all 0.2s ease;          
+}
+
+.botao:hover{
+    transition: 500ms;
+    background-color: white;
+    color: #000000;
 }

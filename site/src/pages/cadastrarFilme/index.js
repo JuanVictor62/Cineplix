@@ -141,33 +141,34 @@ export default function Index() {
                     </div>
 
                     <div className='f1-imagens' >
-                        <h1 className='f1-capa'>Capa do filme</h1>
                         
                         <div className='insert-img-agrupamento-div1-1' onClick={() => escolherImagem('imagem')}>
 
-                            <input type='file' id='imagem' onChange={e => setImagem(e.target.files[0])} />
-                            {imagem &&
+                            <input type='file' id='imagem' onChange={e => setImagem2(e.target.files[0])} />
+                            {imagem2 &&
 
-                                <img className='foto' src={mostrarImagem(imagem)} alt='' />
+                                <img className='foto' src={mostrarImagem(imagem2)} alt='' />
+                            }
+                        </div>
+
+                        <h1 className='f1-capa'>Capa do filme</h1>
+
+                        <div className='img-2' onClick={() => escolherImagem('imagem2')}>
+
+                            <input type='file' id='imagem2' onChange={e => setImagem(e.target.files[0])} />
+                            {imagem &&
+                                <img className='foto2' src={mostrarImagem(imagem)} alt='' />
                             }
                         </div>
 
                         <h1>Foto do filme</h1>
 
-                        <div className='img-2' onClick={() => escolherImagem('imagem2')}>
-
-                            <input type='file' id='imagem2' onChange={e => setImagem2(e.target.files[0])} />
-                            {imagem2 &&
-                                <img className='foto2' src={mostrarImagem(imagem2)} alt='' />
-                            }
-                        </div>
-
-
-                        <div>
-                            <button className='botao' onClick={salvarFilme}>Cadastrar</button>
-                        </div>
                     </div>
 
+                </div>
+
+                <div>
+                    <button className='botao' onClick={salvarFilme}>Cadastrar</button>
                 </div>
             </section>
         </main>

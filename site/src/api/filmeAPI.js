@@ -51,3 +51,8 @@ export async function listarIdioma(){
     const r = await api.get('/get/idioma');
     return r.data;
 }
+
+export async function listarFilmes(){
+    const r = await api.get('/admin/listar');
+    return r.data;
+}

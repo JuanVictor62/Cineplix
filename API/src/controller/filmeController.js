@@ -1,4 +1,4 @@
-import {listarClassificacao, listarGenero, listarIdioma, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
+import {listarClassificacao, listarGenero, listarIdioma, ListarTodasImagensporId, listarTodos, ListarTodosFilmePorId, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
 
 import { Router } from "express";
 import multer from 'multer'
@@ -42,6 +42,39 @@ server.get('/get/idioma', async (req, resp) => {
     }
     catch (err) {
         console.log(err)
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
+server.get('/admin/filme/:id', async (req, resp) => {
+    try{
+        const id = req.params.id;
+
+        const filme =  await ListarTodosFilmePorId(id);
+        const imagens = await ListarTodasImagensporId(id);
+
+        resp.send({
+            info: filme,
+            imagens: imagens
+    })
+
+    }
+    catch(err){
+        resp.status(400).send({
+            erro: err.message
+        })
+        console.log(err)
+    }
+}
+)
+
+server.get('/admin/listar', async (req, resp) => {
+    try {
+        const r = await listarTodos();
+        resp.send(r)
+    } catch (err) {
         resp.status(400).send({
             erro: err.message
         })
