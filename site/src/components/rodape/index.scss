@@ -1,0 +1,120 @@
+.rodape{
+    background-color: #0F0F0F;
+    .rodape-mae{
+        display: flex;
+        flex-direction: column;
+
+        .rodape-div-logo{
+            .rodape-logo{
+                height: 2.5em;
+                margin-left: 5em;
+                margin-top: 2.5em;
+            }
+        }
+
+        .hr{
+            display: flex;
+            justify-content: center;
+
+            .hr-1{
+                width: 79em;
+            }
+        }
+
+        .rodape-info-div{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 79em;
+            margin-left: 3.79em;
+            color: #fff;
+            font-family: 'raleway';
+            .rodape-alunos{
+                width: 15em;
+
+                .rodape-dev{
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    width: 12em;
+                    .dev-info{
+                        .juan-linkedln{
+                            width: 1.5em;
+                            margin-right: 1em;
+                            margin-top: 0.6em;
+                        }
+                    }
+
+                    .dev-info-2{
+                        .juan-github{
+
+                            width: 1.5em;
+                        }
+                    }
+                }
+
+                .rodape-dudu{
+                    display: flex;
+                    flex-direction: row;
+                    width: 12em;
+                    justify-content: space-between;
+
+
+                    .dudu-info{
+                        .dudu-linkedln{
+                            width: 1.5em;
+                            margin-top: 0.6em;
+                        }
+                    }
+                }
+
+                .rodape-luiz{
+                    display: flex;
+                    flex-direction: row;
+                    width: 12em;
+                    justify-content: space-between;
+
+
+                    .luiz-info{
+                        .luiz-linkedln{
+                            width: 1.5em;
+                            margin-top: 0.6em;
+                        }
+                    }
+                }
+
+                .rodape-salomao{
+                    display: flex;
+                    flex-direction: row;
+                    width: 12em;
+                    justify-content: space-between;
+
+
+                    .salomao-info{
+                        .salomao-linkedln{
+                            width: 1.5em;
+                            margin-top: 0.6em;
+                        }
+                    }
+                }
+
+                .rodape-matheus{
+                    display: flex;
+                    flex-direction: row;
+                    width: 12em;
+                    justify-content: space-between;
+
+                    .matheus-info{
+                        .matheus-linkedln{
+                            width: 1.5em;
+                            margin-top: 0.6em;
+                        }
+                    }
+                }
+
+
+            }
+        }
+
+    }
+}

@@ -1,5 +1,82 @@
 .f1-landing{
     .f1-card{
-        background-color: black;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 0px;
+        background-color: #000000ec;
+
+        height: 25em;
+        .f1-card-div{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            color: #fff;
+            font-family: 'raleway';
+
+            .f1-card-div-tit{
+                color: #b5121b;
+            }
+
+            .f1-card-div-bt{
+
+                .f1-card-bt{
+                    margin-top: 4em;
+                    cursor: pointer;
+                    color: #fff;
+                    background-color: rgba(0, 0, 0, 0);
+                    border: 1px solid #fff;
+                    border-radius: 2em;
+                    padding: 1.5em 2.5em 1.5em 2.5em;
+                    -webkit-transition: all 0.2s ease;          
+
+                }
+
+                .f1-card-bt:hover{
+                    transition: 500ms;
+                    background-color: white;
+                    color: #000000;
+                }
+            }
+        }
+    }
+
+    .f1-escola{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        height: auto;
+        .f1-escola-div{
+            display: flex;
+            flex-direction: row;
+
+            .f1-escola-div-img{
+                height: 39em;
+                .f1-escola-img{
+                    width: 43em;
+                    height: 39em;
+                    background-size: 100%;
+                }
+            }
+
+            .f1-escola-div-txt{
+                display: flex;
+                justify-content: center;
+                width: 42.4em;
+                background-color: #0c0c0c;
+
+                .f1-escola-txt{
+                    width: 20em;
+                    font-size: 1.7em;
+                    color: #b1b0b0;
+                    font-family: 'raleway';
+
+                }
+            }
+        }
     }
 }

@@ -1,0 +1,23 @@
+.f1-catalogo{
+    
+    .f1-cards{
+        background-color: #000000;
+        color: #b5121b;
+        font-family: 'raleway';
+        background-color: 100%;
+        
+
+        .f1-cards-txt{
+            margin-left: 4em;
+            .f1-card-h1{
+                font-size: 2em;
+            }
+        }
+        .f1-cards-txt > p{
+            color: #fff;
+        }
+    }
+
+    .f1-rodape{
+    }
+}

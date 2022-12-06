@@ -11,12 +11,10 @@ export default function Index() {
     async function verFilmes() {
         const r = await listarFilmes();
         setFilme(r);
-        console.log(r);
     }
 
     useEffect(() => {
         verFilmes();
-        alterarCor();
     }, [])
 
     function mostrarImagem(imagem) {
@@ -33,15 +31,6 @@ export default function Index() {
         }
     }
 
-    function alterarCor(){
-        if(filme.classificacao == "L"){
-            console.log("Socorrooooo")
-        }
-        else if(filme.classificacao == 10){
-            console.log("")
-        }
-    }
-
     return (
         <main className='main-card' >
             {filme.map(item =>
@@ -51,15 +40,10 @@ export default function Index() {
                     </div>
 
                     <div className='card-txt' >
-                        <p>
-                            {item.nome}
+                        <p className='txt' >
+                            {item.nome.substr(0,30)}
                         </p>
 
-                        <div className='card-clas-div' >
-                            <p className='card-clas' >
-                                {item.classificacao}
-                            </p>
-                        </div>
                     </div>
                 </div>
             )}
