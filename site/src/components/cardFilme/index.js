@@ -8,6 +8,8 @@ import { API_URL } from '../../api/config';
 export default function Index() {
     const [filme, setFilme] = useState([]);
 
+    const navigate = useNavigate();
+
     async function verFilmes() {
         const r = await listarFilmes();
         setFilme(r);
@@ -31,10 +33,14 @@ export default function Index() {
         }
     }
 
+    function abrirDetalhes(id) {
+        navigate(`/cineplix/detalhesFilme/${id}`)
+    }
+
     return (
         <main className='main-card' >
             {filme.map(item =>
-                <div className='card' >
+                <div className='card' onClick={() => abrirDetalhes(item.id)} >
                     <div className='card-img-div'>
                         <img className='card-img'  src={mostrarImagem(item.imagem)}/>
                     </div>

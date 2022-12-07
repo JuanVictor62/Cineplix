@@ -33,14 +33,14 @@ export default function Index(){
 
                         <div className='rodape-dudu' >
                             <p>Eduardo Cruz</p>
-                            <a className='dudu-info' target="_blank" rel="noopener noreferrer">
+                            <a href='https://www.linkedin.com/in/eduardo-ribeiro-0118a8253/' className='dudu-info' target="_blank" rel="noopener noreferrer">
                                 <img className='dudu-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
 
                         <div className='rodape-luiz' >
                             <p>Luiz Fernando</p>
-                            <a className='luiz-info' target="_blank" rel="noopener noreferrer" >
+                            <a href='https://www.linkedin.com/in/luiz-fernando-445978254/' className='luiz-info' target="_blank" rel="noopener noreferrer" >
                                 <img className='luiz-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
@@ -54,7 +54,7 @@ export default function Index(){
 
                         <div className='rodape-matheus' >
                             <p>Matheus Nunes</p>
-                            <a className='matheus-info' target="_blank" rel="noopener noreferrer">
+                            <a href='https://www.linkedin.com/in/matheus-santos-29a974254' className='matheus-info' target="_blank" rel="noopener noreferrer">
                                 <img className='matheus-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
