@@ -73,8 +73,8 @@ export default function Index(){
 
                     <div className='div-1' >
                         <a onClick={termos}>Termos de uso</a>
-                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Suporte</a>
-                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>SAC</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer">Suporte</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer">SAC</a>
                     </div>
                         
 
@@ -85,8 +85,8 @@ export default function Index(){
 
 
                     <div className='div-3' >
-                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Contato</a>
-                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Fale Conosco</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer">Contato</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0' target="_blank" rel="noopener noreferrer">Fale Conosco</a>
                         
                     </div>
 
