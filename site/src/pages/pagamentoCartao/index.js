@@ -54,7 +54,7 @@ export default function Index(){
 
     function calcularTotal(){
         let total1 = 0;
-        total1 = (17.50 * qtdInt) + (13.50 * qtdMeia);
+        total1 = (17.50 * qtdInt) + (13.50 * qtdMeia) + (9.00 * picPeq) + (12.00 * picMed) + (15.00 * picGra) + (7.00 * refriPeq) + (11.00 * refriMed) + (14.00 * refriGra) + (40.00 * comboNatal) + (36.00 * comboMedio);
         return total1.toFixed(2);
     }
 
@@ -77,7 +77,7 @@ export default function Index(){
             let pedido = ''
 
             let total1 = 0;
-            total1 = (17.50 * qtdInt) + (13.50 * qtdMeia);
+            total1 = (17.50 * qtdInt) + (13.50 * qtdMeia) + (9.00 * picPeq) + (12.00 * picMed) + (15.00 * picGra) + (7.00 * refriPeq) + (11.00 * refriMed) + (14.00 * refriGra) + (40.00 * comboNatal) + (36.00 * comboMedio);
             let filme = storage('carrinho').id;
     
             if (storage('usuario-logado')) {
@@ -170,11 +170,6 @@ export default function Index(){
             </section>
             
             <section className='f1-pagamento-dinheiro'>
-                <div className='f1-tit-txt'>
-                    <h1>
-                        Pagamento - Dinheiro
-                    </h1>
-                </div>
 
                 <div className='f1-div-ingressos' >
                     <h1 className='tit' >Quantidade de Ingressos</h1>

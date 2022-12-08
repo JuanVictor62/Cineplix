@@ -109,7 +109,8 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
     try{
         const { idUsuario } = req.params;
         const info = req.body;
-
+        
+        await validarPedido(info)
         const idPedido = await inserirPedidoItem(idUsuario, info);
 
         resp.status(204).send();

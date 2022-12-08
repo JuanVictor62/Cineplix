@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { IMaskInput } from 'react-imask';
 
-export default function Index(){
+export default function Index() {
     const [idFilme, setIdFilme] = useState();
     const [qtdInt, setQtdInt] = useState(0);
     const [qtdMeia, setQtdMeia] = useState(0);
@@ -31,7 +31,7 @@ export default function Index(){
     const navigate = useNavigate();
 
 
-    async function btPedido(){
+    async function btPedido() {
         let produtos = Storage('carrinho').id;
         let id = storage('usuario-logado').id;
 
@@ -40,9 +40,9 @@ export default function Index(){
 
     }
 
-    function calcularTotal(){
+    function calcularTotal() {
         let total1 = 0;
-        total1 = (17.50 * qtdInt) + (13.50 * qtdMeia);
+        total1 = (17.50 * qtdInt) + (13.50 * qtdMeia) + (9.00 * picPeq) + (12.00 * picMed) + (15.00 * picGra) + (7.00 * refriPeq) + (11.00 * refriMed) + (14.00 * refriGra) + (40.00 * comboNatal) + (36.00 * comboMedio);
         return total1.toFixed(2);
     }
 
@@ -62,21 +62,25 @@ export default function Index(){
         }
     }
 
-    async function pagamentoDinheiro(){
-                let idUsuario = storage('usuario-logado').id;
-                let carrinho = [];
-                
-                let idFilme = carrinho.find(item => item.id === item.id)
+    async function pagamentoDinheiro() {
+        try {
+            let idUsuario = storage('usuario-logado').id;
+            let carrinho = [];
 
-                let total1 = 0;
-                total1 = (17.50 * qtdInt) + (13.50 * qtdMeia);
+            let idFilme = carrinho.find(item => item.id === item.id)
 
-                const r = await inserirPedidoDinheiro(idUsuario, idFilme , qtdInt, qtdMeia, adicionais, total1);
-                toast.dark("Pedido realizado com sucesso")
-                storage('carrinho', []);
-                navigate('/')
+            let total1 = 0;
+            total1 = (17.50 * qtdInt) + (13.50 * qtdMeia) + (9.00 * picPeq) + (12.00 * picMed) + (15.00 * picGra) + (7.00 * refriPeq) + (11.00 * refriMed) + (14.00 * refriGra) + (40.00 * comboNatal) + (36.00 * comboMedio);
+
+            const r = await inserirPedidoDinheiro(idUsuario, idFilme, qtdInt, qtdMeia, adicionais, total1);
+            toast.dark("Pedido realizado com sucesso")
+            storage('carrinho', []);
+            navigate('/')
+        } catch (err) {
+            toast.error(err.response.data.erro);
+        }
     }
-    
+
 
     function mostrarImagem(imagem) {
         return buscarImagem(imagem)
@@ -85,16 +89,16 @@ export default function Index(){
     useEffect(() => {
         carregarItens();
 
-        if(!storage('carrinho')){
+        if (!storage('carrinho')) {
             navigate('/')
             toast.dark('Nop')
         }
     }, [])
 
-    return(
+    return (
         <main className='f1-pagamento'>
             <header>
-                <Cabecalho/>
+                <Cabecalho />
             </header>
 
             <section className='f1-pagamento-dinheiro'>
@@ -138,7 +142,7 @@ export default function Index(){
                         <h3>Combo Natal</h3>
                         <div className='f1-combos-div' >
                             <p>2 Pipoca Grande personalizada + 2 Refri Refil</p>
-                            <select onChange={e => setComboNatal(e.target.value)} value={comboNatal}  className='f1-combo-natal' >
+                            <select onChange={e => setComboNatal(e.target.value)} value={comboNatal} className='f1-combo-natal' >
                                 <option> 0 </option>
                                 <option> 1 </option>
                                 <option> 2 </option>
@@ -151,7 +155,7 @@ export default function Index(){
                         <h3>Combo médio</h3>
                         <div className='f1-combo-medio' >
                             <p>1 Pipoca media + 1 Refri lata + 1 água</p>
-                            <select onChange={e => setComboMedio(e.target.value )} value={comboMedio}  className='f1-combo-mediobt' >
+                            <select onChange={e => setComboMedio(e.target.value)} value={comboMedio} className='f1-combo-mediobt' >
                                 <option> 0 </option>
                                 <option> 1 </option>
                                 <option> 2 </option>
@@ -168,7 +172,7 @@ export default function Index(){
 
                             <div className='f1-picpeq' >
                                 <h3>Pipoca pequena: </h3>
-                                <select onChange={e => setPicPeq(e.target.value)} value={picPeq}  className='f1-picpeq-bt' >
+                                <select onChange={e => setPicPeq(e.target.value)} value={picPeq} className='f1-picpeq-bt' >
                                     <option> 0 </option>
                                     <option> 1 </option>
                                     <option> 2 </option>
@@ -204,7 +208,7 @@ export default function Index(){
                                 </select>
                             </div>
                         </div>
-                        
+
                         <div className='f1-refri' >
                             <div className='f1-refripeq' >
                                 <h3>Refrigerante pequeno: </h3>
@@ -218,7 +222,7 @@ export default function Index(){
                                     <option> 5 </option>
                                 </select>
                             </div>
-                            
+
                             <div className='f1-refrimed' >
                                 <h3>Refrigerante médio</h3>
                                 <select onChange={e => setRefriMed(e.target.value)} value={refriMed} className='f1-refrimed-bt' >
@@ -231,7 +235,7 @@ export default function Index(){
                                     <option> 5 </option>
                                 </select>
                             </div>
-                            
+
                             <div className='f1-refrigra' >
                                 <h3>Refrigerante grande</h3>
                                 <select onChange={e => setRefriGra(e.target.value)} value={refriGra} className='f1-refrigra-bt' >
@@ -256,7 +260,7 @@ export default function Index(){
                             <img className='prod-img' src={mostrarImagem(item.produto.imagens[0])} />
                             <p>{item.produto.info.nome}</p>
                         </div>
-                    )}                    
+                    )}
                 </div>
                 <h1>R${calcularTotal()}</h1>
 
