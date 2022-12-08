@@ -1,0 +1,38 @@
+.f1-termos{
+
+
+    .f1-section-termos{
+
+        background-color: #0f0f0f;
+        color: #fff;
+        font-family: 'raleway';
+
+        .f1-div-bt{
+
+            .f1-bt{
+                margin-top: 2.5em;
+                margin-left: 6em;
+                background-color: #0f0f0f;
+                color: #fff;
+                border: none;
+                border: 1px solid #fff;
+                padding: 1em 1.5em 1em 1.5em;
+                border-radius: 1em;
+                cursor: pointer;
+                -webkit-transition: all 0.2s ease;          
+
+            }
+
+            .f1-bt:hover{
+                background-color: #fff;
+                color: #000;
+                transition: 500ms;
+            }
+        }
+
+        .f1-div{
+            width: 75em;
+            margin-left: 5em;
+        }
+    }
+}
