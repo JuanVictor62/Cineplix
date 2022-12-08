@@ -54,6 +54,10 @@ export default function Index(){
     useEffect(() => {
         carregarFilme();
     }, [])
+
+    useEffect(() => {
+        storage('carrinho', [])
+    })
     return(
         <main className='f1-detalhes' >
             <header>

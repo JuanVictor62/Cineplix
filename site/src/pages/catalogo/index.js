@@ -2,8 +2,14 @@ import './index.scss';
 import Cabecalho from '../../components/cabecalho';
 import CardFilmes from '../../components/cardFilme';
 import Rodape from '../../components/rodape'
+import storage from 'local-storage'
+import { useEffect } from 'react';
 
 export default function Index(){
+
+    useEffect(() => {
+        storage('carrinho', [])
+    })
     return(
         <main className='f1-catalogo' >
             <header>
