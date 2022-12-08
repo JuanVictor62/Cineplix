@@ -2,8 +2,19 @@ import './index.scss'
 import Logo from '../../assets/img/logo.png';
 import Github from '../../assets/img/github.png'
 import Linkedln from '../../assets/img/linkedin.png'
+import { useNavigate } from 'react-router-dom';
 
 export default function Index(){
+    const navigate = useNavigate()
+
+    function navCat(){
+        navigate('/cineplix/catalogo');
+    }
+
+    function termos(){
+        navigate('/cineplix/termos');
+    }
+
     return(
         <main className='rodape' >
             <div className='rodape-mae' >
@@ -19,7 +30,7 @@ export default function Index(){
                     <div className='rodape-alunos' >
                         <p>Developers:</p>
                         <div className='rodape-dev' >
-                            <p>Juan Victor</p>
+                            <p className='juan' >Juan Victor</p>
                             <div>
                                 <a className='dev-info' href='https://github.com/JuanVictor62' target="_blank" rel="noopener noreferrer">
                                     <img className='juan-linkedln'  src={Github} alt='' />
@@ -32,50 +43,50 @@ export default function Index(){
                         </div>
 
                         <div className='rodape-dudu' >
-                            <p>Eduardo Cruz</p>
+                            <p className='dudu' >Eduardo Cruz</p>
                             <a href='https://www.linkedin.com/in/eduardo-ribeiro-0118a8253/' className='dudu-info' target="_blank" rel="noopener noreferrer">
                                 <img className='dudu-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
 
                         <div className='rodape-luiz' >
-                            <p>Luiz Fernando</p>
+                            <p className='louis' >Luiz Fernando</p>
                             <a href='https://www.linkedin.com/in/luiz-fernando-445978254/' className='luiz-info' target="_blank" rel="noopener noreferrer" >
                                 <img className='luiz-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
 
                         <div className='rodape-salomao' >
-                            <p>Arthur Salomão</p>
+                            <p className='saloma' >Arthur Salomão</p>
                             <a className='salomao-info' href='https://www.linkedin.com/in/arthur-salomão-247a35228/' target="_blank" rel="noopener noreferrer">
                                 <img className='salomao-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
 
                         <div className='rodape-matheus' >
-                            <p>Matheus Nunes</p>
+                            <p className='matheus' >Matheus Nunes</p>
                             <a href='https://www.linkedin.com/in/matheus-santos-29a974254' className='matheus-info' target="_blank" rel="noopener noreferrer">
                                 <img className='matheus-linkedln' src={Linkedln} alt='' />
                             </a>
                         </div>
                     </div>
 
-                    <div>
-                        <p>Termos de uso</p>
-                        <p>Suporte</p>
-                        <p>SAC</p>
+                    <div className='div-1' >
+                        <a onClick={termos}>Termos de uso</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Suporte</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>SAC</a>
                     </div>
                         
 
-                    <div>
-                        <p>Cineplix</p>
-                        <p>Nosso Catálogo</p>
+                    <div className='div-2'>
+                        <a href='/'>Cineplix</a>
+                        <a onClick={navCat} >Nosso Catálogo</a>
                     </div>
 
 
-                    <div>
-                        <p href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Contato</p>
-                        <p href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Fale Conosco</p>
+                    <div className='div-3' >
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Contato</a>
+                        <a href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Fale Conosco</a>
                         
                     </div>
 

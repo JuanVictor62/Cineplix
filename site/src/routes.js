@@ -9,6 +9,7 @@ import DetalhesFilme from './pages/detalhesFilme'
 import Pagamento from './pages/pagamento'
 import PagamentoCartao from './pages/pagamentoCartao'
 import PagamentoDinheiro from './pages/pagamentoDinheiro'
+import Termos from './pages/termos'
 
 export default function Index(){
     return(
@@ -23,6 +24,7 @@ export default function Index(){
                 <Route path='/cineplix/pagamento' element={<Pagamento/>} />
                 <Route path='/cineplix/pagamento/cartao' element={< PagamentoCartao/>} />
                 <Route path='/cineplix/pagamento/dinheiro' element={< PagamentoDinheiro/>} />
+                <Route path='/cineplix/termos' element={<Termos/>} />
             </Routes>
         </BrowserRouter>
     );

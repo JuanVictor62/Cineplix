@@ -37,6 +37,12 @@
                     flex-direction: row;
                     justify-content: space-between;
                     width: 12em;
+
+
+
+                    .juan:hover{
+                        color: #600000;
+                    }
                     .dev-info{
                         .juan-linkedln{
                             width: 1.5em;
@@ -58,7 +64,11 @@
                     flex-direction: row;
                     width: 12em;
                     justify-content: space-between;
+                    
 
+                    .dudu:hover{
+                        color: #600000;
+                    }
 
                     .dudu-info{
                         .dudu-linkedln{
@@ -73,6 +83,11 @@
                     flex-direction: row;
                     width: 12em;
                     justify-content: space-between;
+
+
+                    .louis:hover{
+                        color: #600000;
+                    }
 
 
                     .luiz-info{
@@ -90,6 +105,10 @@
                     justify-content: space-between;
 
 
+                    .saloma:hover{
+                        color: #600000;
+                    }
+
                     .salomao-info{
                         .salomao-linkedln{
                             width: 1.5em;
@@ -104,6 +123,10 @@
                     width: 12em;
                     justify-content: space-between;
 
+                    .matheus:hover{
+                        color: #600000;
+                    }
+
                     .matheus-info{
                         .matheus-linkedln{
                             width: 1.5em;
@@ -114,7 +137,57 @@
 
 
             }
+
+            .div-1{
+                display: flex;  
+                flex-direction: column;
+                margin-top: 1em;
+                line-height: 2em;
+            }
+            .div-1 > a{
+                cursor: pointer;
+            }
+
+            .div-1 > a:hover{
+                color: #600000;
+            }
+
+            .div-2{
+                display: flex;  
+                flex-direction: column;
+                margin-top: 1em;
+                line-height: 2em;
+            }
+
+            .div-2 > a{
+                cursor: pointer;
+            }
+
+            .div-2 > a:hover{
+                color: #600000;
+            }
+
+            .div-3{
+                display: flex;  
+                flex-direction: column;
+                margin-top: 1em;
+                line-height: 2em;
+            }
+
+            .div-3 > a{
+                cursor: pointer;
+            }
+
+            .div-3 > a:hover{
+                color: #600000;
+            }
         }
 
     }
+}
+
+a{
+    color: #fff;
+    border: none;
+    text-decoration: none;
 }
