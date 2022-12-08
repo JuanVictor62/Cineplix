@@ -6,6 +6,7 @@ import storage from 'local-storage'
 import { buscarImagem, filmePorId, inserirPedidoDinheiro } from '../../api/filmeAPI';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import { IMaskInput } from 'react-imask';
 
 export default function Index(){
     const [idFilme, setIdFilme] = useState();
@@ -72,6 +73,8 @@ export default function Index(){
 
                 const r = await inserirPedidoDinheiro(idUsuario, idFilme , qtdInt, qtdMeia, adicionais, total1);
                 toast.dark("Pedido realizado com sucesso")
+                storage('carrinho', []);
+                navigate('/')
     }
     
 

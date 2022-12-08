@@ -142,3 +142,29 @@ export async function inserirPedidoItem(idUsuario, info) {
         info.total]);
     return filme.affectedRows;
 }
+
+export async function inserirPagamento(idPedido, novoPagamento) {
+    const comando = `
+        INSERT INTO tb_pagamento_cartao (
+            id_pedido,
+            nm_cartao,
+            nr_cartao,
+            dt_vencimento,
+            cod_seguranca,
+            nr_parcelas,
+            ds_forma_pagamento 
+        )
+        VALUES (?, ?, ?, ?, ?, ?, ?)
+    `
+
+    const [info] = await con.query(comando, [
+        idPedido,
+        novoPagamento.nome,
+        novoPagamento.numero,
+        novoPagamento.vencimento,
+        novoPagamento.codSeguranca,
+        novoPagamento.parcelas,
+        novoPagamento.formaPagamento
+    ]);
+    return info.affectedRows;
+}

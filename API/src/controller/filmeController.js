@@ -1,8 +1,10 @@
-import {inserirPedidoItem, listarClassificacao, listarGenero, listarIdioma, ListarTodasImagensporId, listarTodos, ListarTodosFilmePorId, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
+import {inserirPagamento, inserirPedidoItem, listarClassificacao, listarGenero, listarIdioma, ListarTodasImagensporId, listarTodos, ListarTodosFilmePorId, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
 
 import { Router } from "express";
 import multer from 'multer'
 import { validarFilme } from "../services/validarFilme.js";
+import { validarPagamento } from "../services/pagamentoCartaoValidacao.js";
+import { validarPedido } from "../services/pedidoValidacao.js";
 const server = Router();
 
 const upload = multer({ dest: 'storage/fotoFilme' })
@@ -108,19 +110,7 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
         const { idUsuario } = req.params;
         const info = req.body;
 
-        // const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
-        // console.log(novoPedido)
-        // await validarnovoPedido(novoPedido);
-        // await validarPagamento(info.cartao)
-        // const idPedidoCriado = await inserirPedido(novoPedido);
-        // await inserirPagamento(idPedidoCriado, info.cartao);
-        // console.log(inserirPagamento)
-        
-
-        // for (let item of info.produtos) {
-        //     const prod = await ListarTodosProdutosPorId(item.id);
-            const idPedido = await inserirPedidoItem(idUsuario, info);
-        // }
+        const idPedido = await inserirPedidoItem(idUsuario, info);
 
         resp.status(204).send();
         
@@ -133,6 +123,26 @@ server.post('/api/pedido/:idUsuario', async (req, resp) => {
     }
 
 })
+
+server.post('/api/pedido/cartao/:idUsuario', async (req,resp) => {
+    try {
+        const { idUsuario } = req.params;
+        const info = req.body;
+
+        await validarPedido(info)
+        await validarPagamento(info.cartao);
+        const pedido = await inserirPedidoItem(idUsuario, info);
+        const cartao = await inserirPagamento(pedido, info.cartao)
+
+        resp.status(204).send();
+
+    } catch (err) {
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+})
+
 
 //PUT
 

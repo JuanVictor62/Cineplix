@@ -74,3 +74,8 @@ export async function inserirPedidoDinheiro(idUsuario, idFilme, qtdInt, qtdMeia,
     );
     return r.data;
 }
+
+export async function salvarNovoPedido(idUsuario, novoPedido){
+    const r = await api.post('/api/pedido/cartao/' + idUsuario, novoPedido)
+    return r.data;
+}

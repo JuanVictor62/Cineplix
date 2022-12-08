@@ -1,0 +1,299 @@
+.f1-pagamento-cartao {
+    display: flex;
+    flex-direction: row;
+    background-color: #0f0f0f;
+
+    .f1-info-cart {
+        margin-left: 5em;
+        margin-top: 2em;
+        font-family: 'raleway';
+        color: #fff;
+        padding-top: 5em;
+
+        .f1-info-tit {
+            color: #600000;
+        }
+
+        .info-cart {
+            .f1-div-info1 {
+                display: flex;
+                flex-direction: row;
+
+                .info1-input-1 {
+                    outline: none;
+                    background-color: #0f0f0f;
+                    border: none;
+                    border-bottom: 1px solid #ffffff;
+                    width: 25em;
+                    color: #fff;
+                }
+
+                .aj {
+                    margin-left: 2em;
+                }
+
+                .info1-input-2 {
+                    outline: none;
+                    background-color: #0f0f0f;
+                    border: none;
+                    border-bottom: 1px solid #fff;
+                    color: #fff;
+                    margin-left: 2.5em;
+                }
+            }
+
+
+            .f1-div-info2 {
+                display: flex;
+                flex-direction: row;
+
+                .txtttt {
+                    margin-left: 2cd siteem;
+                }
+
+                .info2-input-1 {
+                    outline: none;
+                    background-color: #0f0f0f;
+                    border: none;
+                    border-bottom: 1px solid #ffffff;
+                    width: 25em;
+                    color: #fff;
+                }
+
+                .info2-input-2 {
+                    outline: none;
+                    background-color: #0f0f0f;
+                    border: none;
+                    border-bottom: 1px solid #ffffff;
+                    margin-left: 2.5em;
+                    color: #fff;
+                }
+            }
+
+            .f1-parcela>select {
+                background-color: #0f0f0f;
+                color: #fff;
+                border: none;
+            }
+        }
+    }
+
+    .f1-pagamento-dinheiro {
+        margin-left: 5em;
+        color: #fff;
+
+        .f1-tit-txt {
+            color: #600000;
+        }
+
+        .f1-ingressos {
+            .f1-ingint {
+                display: flex;
+                flex-direction: row;
+
+                .f1-ingint-slc {
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.25em;
+                    margin-left: 1.5em;
+                }
+            }
+
+            .f1-ingmeia {
+                display: flex;
+                flex-direction: row;
+
+                .f1-ingmeia-slc {
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.25em;
+                    margin-left: 2.4em;
+                }
+            }
+        }
+
+        .f1-combos {
+            .f1-combos-tit {
+                color: #600000;
+            }
+
+            .f1-combos-div {
+                display: flex;
+                flex-direction: row;
+                .f1-combo-natal {
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.25em;
+                    margin-left: 2.4em;
+                }
+            }
+
+            .f1-combo-medio{
+                display: flex;
+                flex-direction: row;
+
+                .f1-combo-mediobt{
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.25em;
+                    margin-left: 6em;
+                }
+            }
+        }
+
+        .f1-indiv{
+            display: flex;
+            flex-direction: row;
+            .f1-indiv-div{
+               .tit-2{
+                color: #600000;
+                width: 11em;
+                }
+
+                .f1-picpeq{
+                    display: flex;
+                    flex-direction: row;
+                    .f1-picpeq-bt{
+                        border: none;
+                        background-color: #0f0f0f;
+                        color: #fff;
+                        width: 6em;
+                        height: 1.5em;
+                        margin-top: 1.7em;
+                        margin-left: 2em;
+                    }
+                }
+
+                .f1-picmed{
+                    display: flex;
+                    flex-direction: row;
+                    
+                    .f1-picmed-bt{
+                        border: none;
+                        background-color: #0f0f0f;
+                        color: #fff;
+                        width: 6em;
+                        height: 1.5em;
+                        margin-top: 1.7em;
+                        margin-left: 3.65em;
+                    }
+                }
+
+                .f1-picgra{
+                    display: flex;
+                    flex-direction: row;
+
+                    .f1-picgra-bt{
+                        border: none;
+                        background-color: #0f0f0f;
+                        color: #fff;
+                        width: 6em;
+                        height: 1.5em;
+                        margin-top: 1.7em;
+                        margin-left: 3em;
+                    }
+                }
+            }
+        }
+
+        .f1-refri{
+            margin-top: 5em;
+            margin-left: 2.5em;
+            .f1-refripeq{
+                display: flex;
+                flex-direction: row;
+
+                .txttt{
+                    width: 11em;
+                }
+
+                .f1-refripeq-bt{
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.7em;
+                    margin-left: 1em;
+                }
+            }
+
+            .f1-refrimed{
+                display: flex;
+                flex-direction: row;
+
+                .f1-refrimed-bt{
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.7em;
+                   margin-left: 3.5em;
+                }
+            }
+
+            .f1-refrigra{
+                display: flex;
+                flex-direction: row;
+
+                .f1-refrigra-bt{
+                    border: none;
+                    background-color: #0f0f0f;
+                    color: #fff;
+                    width: 6em;
+                    height: 1.5em;
+                    margin-top: 1.7em;
+                    margin-left: 3.15em;
+                }
+            }
+        }
+    }
+
+    .f1-item {
+        background-color: #0f0f0f;
+        padding-top: 5em;
+        padding-left: 15em;
+        padding-top: 10em;
+        width: 100%;
+        color: #fff;
+
+        .prod-img {
+            height: 20em;
+            width: 17.5em;
+            border-radius: 1em;
+        }
+
+        .div-bt {
+            .bt {
+                color: #fff;
+                border: none;
+                background-color: rgba(255, 255, 255, 0);
+                font-family: 'inter';
+                cursor: pointer;
+                border-radius: 1em;
+                border: 1px solid #fff;
+                padding: 0.5em 1em;
+                -webkit-transition: all 0.2s ease;
+            }
+
+            .bt:hover {
+                transition: 500ms;
+                background-color: white;
+                color: #000000;
+            }
+        }
+    }
+}
