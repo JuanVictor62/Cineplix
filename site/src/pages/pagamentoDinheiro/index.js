@@ -65,7 +65,7 @@ export default function Index(){
                 let idUsuario = storage('usuario-logado').id;
                 let carrinho = [];
                 
-                let idFilme = carrinho.find(item => item.id === info.id)
+                let idFilme = carrinho.find(item => item.id === item.id)
 
                 let total1 = 0;
                 total1 = (17.50 * qtdInt) + (13.50 * qtdMeia);
