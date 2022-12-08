@@ -74,8 +74,8 @@ export default function Index(){
 
 
                     <div>
-                        <p>Contato</p>
-                        <p>Fale Conosco</p>
+                        <p href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Contato</p>
+                        <p href='https://api.whatsapp.com/send/?phone=5511980165866&text&type=phone_number&app_absent=0'>Fale Conosco</p>
                         
                     </div>
 

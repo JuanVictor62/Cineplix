@@ -1,0 +1,58 @@
+.f1-tipo-pagamento{
+    .f1-tipo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-color: black;
+        height: 44.1em;
+
+        .f1-titt{
+            color: #600000;
+            font-family: 'raleway';
+            font-size: 2.5em;
+        }
+
+        .f1-bt{
+            color: #fff;
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            font-family: 'inter';
+            font-size: 1.5em;
+            margin-top: 2.5em;
+            cursor: pointer;
+            border-radius: 1em;
+            border: 1px solid #fff;
+            padding: 1em 5.25em 1em 5.25em;
+            -webkit-transition: all 0.2s ease;   
+        }
+
+        .f1-bt:hover{
+            transition: 500ms;
+            background-color: white;
+            color: #000000;
+        }
+
+        .f1-bt2{
+            color: #fff;
+            border: none;
+            background-color: rgba(255, 255, 255, 0);
+            font-family: 'inter';
+            font-size: 1.5em;
+            cursor: pointer;
+            border-radius: 1em;
+            border: 1px solid #fff;
+            padding: 1em 3em 1em 3em;
+            -webkit-transition: all 0.2s ease;   
+            margin-top: 2.5em;
+        }
+
+        .f1-bt2:hover{
+            transition: 500ms;
+            background-color: white;
+            color: #000000;
+        }
+        
+    }   
+}

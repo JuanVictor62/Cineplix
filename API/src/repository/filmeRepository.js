@@ -120,3 +120,25 @@ export async function listarTodos(){
     const [linhas] = await con.query(comando);
     return linhas;
 }
+
+export async function inserirPedidoItem(idUsuario, info) {
+    const comando = `
+        INSERT INTO tb_pedido_item (
+            id_usuario,
+            id_filme,
+            qtd_int,
+            qtd_meia,
+            vl_adicionais,
+            vl_total
+        )
+        VALUES (?, ?, ?, ?, ?, ?)
+    `
+
+    const [filme] = await con.query(comando, [idUsuario, 
+        info.idFilme,
+        info.qtdInt, 
+        info.qtdMeia, 
+        info.adicionais, 
+        info.total]);
+    return filme.affectedRows;
+}

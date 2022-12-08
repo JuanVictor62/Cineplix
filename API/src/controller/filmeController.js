@@ -1,4 +1,4 @@
-import {listarClassificacao, listarGenero, listarIdioma, ListarTodasImagensporId, listarTodos, ListarTodosFilmePorId, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
+import {inserirPedidoItem, listarClassificacao, listarGenero, listarIdioma, ListarTodasImagensporId, listarTodos, ListarTodosFilmePorId, salvarFilme, salvarFilmeImagem } from "../repository/filmeRepository.js"; 
 
 import { Router } from "express";
 import multer from 'multer'
@@ -101,6 +101,37 @@ server.post('/insert/filme', async (req,resp) => {
             erro: err.message
         })
     }
+})
+
+server.post('/api/pedido/:idUsuario', async (req, resp) => {
+    try{
+        const { idUsuario } = req.params;
+        const info = req.body;
+
+        // const novoPedido = criarNovoPedido(idUsuario, idCupom, info);
+        // console.log(novoPedido)
+        // await validarnovoPedido(novoPedido);
+        // await validarPagamento(info.cartao)
+        // const idPedidoCriado = await inserirPedido(novoPedido);
+        // await inserirPagamento(idPedidoCriado, info.cartao);
+        // console.log(inserirPagamento)
+        
+
+        // for (let item of info.produtos) {
+        //     const prod = await ListarTodosProdutosPorId(item.id);
+            const idPedido = await inserirPedidoItem(idUsuario, info);
+        // }
+
+        resp.status(204).send();
+        
+    }
+    catch (err) {
+        console.log(err)
+        resp.status(400).send({
+            erro: err.message
+        })
+    }
+
 })
 
 //PUT

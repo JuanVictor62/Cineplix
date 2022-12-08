@@ -61,3 +61,16 @@ export async function filmePorId(id){
     const r = await api.get(`/admin/filme/${id}`);
     return r.data;
 }
+
+export async function inserirPedidoDinheiro(idUsuario, idFilme, qtdInt, qtdMeia, adicionais , total) {
+    const r = await api.post(`/api/pedido/${idUsuario}`, 
+    {
+        idFilme:idFilme,
+        qtdInt: qtdInt,
+        qtdMeia: qtdMeia,
+        adicionais: adicionais,
+        total: total
+    }
+    );
+    return r.data;
+}

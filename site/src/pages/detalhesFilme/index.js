@@ -2,7 +2,7 @@ import './index.scss'
 import Cabecalho from '../../components/cabecalho'
 import { useEffect, useState } from 'react';
 import { filmePorId } from '../../api/filmeAPI';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { API_URL } from '../../api/config';
 import { toast } from 'react-toastify';
 import storage from 'local-storage';
@@ -14,6 +14,7 @@ export default function Index(){
     const [capa, setCapa] = useState(1);
 
     const {id} = useParams();
+    const navigate = useNavigate();
 
     async function carregarFilme(){
         const r = await filmePorId(id);
@@ -45,6 +46,7 @@ export default function Index(){
             })
             storage('carrinho', carrinho)
             toast.dark("🛒 Item Adicionado ao Carrinho")
+            navigate('/cineplix/pagamento')
         }
     }
 

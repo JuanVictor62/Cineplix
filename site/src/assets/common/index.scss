@@ -12,3 +12,14 @@
     font-family: 'raleway';
     src: url('../fonts/Raleway-ExtraLight.ttf');
 }
+
+::-webkit-scrollbar-thumb {
+    background-color: #600000;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+    background-color: #000;
+    width: 10px;
+    height: 1px;
+}
